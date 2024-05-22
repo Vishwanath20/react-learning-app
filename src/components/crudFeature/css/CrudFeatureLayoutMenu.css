@@ -1,0 +1,32 @@
+.menu-container {
+  width: 60%;
+  margin: 0 auto; /* This centers the menu horizontally */
+  margin-top: 3px;
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around; /* Distributes space evenly between items */
+  color: white;
+}
+
+.menu li {
+  flex: 1; /* Each menu item takes equal width */
+}
+
+.menu li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  background-color: #ddd;
+}
