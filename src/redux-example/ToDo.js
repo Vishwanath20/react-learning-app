@@ -5,6 +5,8 @@ import Counter from './Counter';
 import FetchDataApp from './FetchData';
 
 function ToDo({ todos, addTodo }) {
+  console.log('inside ToDo.js::todos::',ToDo);
+  
     const [inputValue, setInputValue] = useState('')
 
     const handleChange = event => {
@@ -43,7 +45,7 @@ function ToDo({ todos, addTodo }) {
 }
 
 const mapStateToProps = state => ({
-    todos: state.todos
+    todos: state.todo.todos
   });
 
   const mapDispatchToProps = {

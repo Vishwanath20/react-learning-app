@@ -1,7 +1,7 @@
 // Dashboard.js
 import React, { useEffect, useState } from 'react';
 
-const Dashboard = ( ) => {
+const RoleBasedMenu = ( ) => {
 
     const [role, setRole]=useState(null);
     useEffect(()=>{
@@ -10,7 +10,7 @@ const Dashboard = ( ) => {
   return (
     <div className="container">
       <h1>Dashboard</h1>
-      <ul>
+      {/* <ul>
         <li>Menu option 1</li>
         <li>Menu option 2</li>
         <li>Menu option 3</li>
@@ -20,9 +20,9 @@ const Dashboard = ( ) => {
             <li>Admin menu option 2</li>
           </>
         )}
-      </ul>
+      </ul> */}
     </div>
   );
 };
 
-export default Dashboard;
+export default RoleBasedMenu;

@@ -34,26 +34,21 @@ export default connect(mapStateToProps, mapDispatchToProps)(Counter);
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement } from './counterActions';
-import CounterChild from './CounterChild';
 
-function Counter() {
+function CounterChild() {
   const count = useSelector(state => state.counter.count);
   const dispatch = useDispatch();
 
   return (
     <>
-    Parent Counter
-    <div style={{backgroundColor:'beige', width:'400px',height:'400px'}}>
+    Child counter 
+    <div style={{backgroundColor:'darkslategray', width:'200px',height:'200px', border:'2px solid red'}}>
     <h1>Counter: {count}</h1>
     <button onClick={() => dispatch(increment())}>Increment</button>
     <button onClick={() => dispatch(decrement())}>Decrement</button>
-
-    <CounterChild></CounterChild>
-
   </div>
-
   </>
   );
 }
 
-export default Counter;
+export default CounterChild;

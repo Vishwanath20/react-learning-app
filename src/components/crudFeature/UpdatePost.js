@@ -4,6 +4,7 @@ import axios from 'axios';
 
 const UpdatePost=({ post, onUpdate, onClose })=>{
 
+    console.log("update post::",post);
     const [title, setTitle] = useState(post.title);
     const [description, setDescription] = useState(post.description);
     const [postedBy, setPostedBy] = useState(post.postedBy);
@@ -11,6 +12,7 @@ const UpdatePost=({ post, onUpdate, onClose })=>{
 
     const update = async () => {
         const updatedPost = { title, description, postedBy, image };
+        console.log('updatedPost::',updatedPost);
         await axios.put(`http://localhost:3001/posts/${post.id}`, updatedPost);
         onUpdate(post.id, updatedPost);
         onClose();

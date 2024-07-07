@@ -11,9 +11,13 @@ import ViewAllPost from './components/crudFeature/ViewAllPost';
 import { ReactReduxContext } from 'react-redux';
 import ToDo from './redux-example/ToDo';
 import CounterApp from './redux-toolkit-example/CounterApp';
+import ParentComponent from './props-drilling-example/ParentComponent';
+import ParentComponent1 from './props-drilling-example/ParentComponent1';
 import UserRegistration from './components/crudFeature/UserRegistration';
 import UserLogin from './components/crudFeature/UserLogin';
-import Dashboard from './components/crudFeature/Dashboard';
+
+import RoleBasedMenu from './components/crudFeature/RoleBasedMenu';
+import DashBoard from './components/crudFeature/DashBoard';
 
 
 function App() {
@@ -24,17 +28,22 @@ function App() {
      <Routes>
         <Route path="/crudOperation" exact element={<Crudfeaturelayout />} />
         <Route path="/AddPost" exact element={<AddPost />} />
+        <Route path="/UpdatePost" exact element={<UpdatePost />} />
         <Route path="/ViewAllPost" exact element={<ViewAllPost />} />
-        <Route path="/UserRegistration" exact element={<UserRegistration />} />
-        <Route path="/UserLogin" exact element={<UserLogin />} />
-        <Route path="/dashboard" exact element={<Dashboard></Dashboard>}></Route>
-       
 
         {/* <Route path="/home" exact element={<Home />} /> */}
         <Route path='/redux-example' exact element={<ToDo/>}></Route>
 
         <Route path='/redux-toolkit-example' exact element={<CounterApp/>}></Route>
 
+        <Route path='/props-drilling-example' exact element={<ParentComponent/>}></Route>
+
+        <Route path='/context-api-example' exact element={<ParentComponent1/>}></Route>
+
+        <Route path='/userRegistration' exact element={<UserRegistration/>}></Route>
+        <Route path='/userLogin' exact element={<UserLogin/>}></Route>
+       <Route path="/RoleBasedMenu" exact element={<RoleBasedMenu></RoleBasedMenu>}></Route>
+       <Route path="postDashBoard" exact element={<DashBoard></DashBoard>}></Route>
       </Routes >
 
     </>

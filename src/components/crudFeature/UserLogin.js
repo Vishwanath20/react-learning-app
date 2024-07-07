@@ -9,15 +9,15 @@ const UserLogin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     
     try {
       const response = await axios.get(`http://localhost:3001/users?email=${email}&password=${password}`);
       if (response.data.length > 0) {
-        // User authenticated
-        const userRole = response.data[0].role;
-        localStorage.setItem("userRole", userRole);
+        localStorage.setItem("userRole", response.data[0].role);
+        localStorage.setItem("userEmail", response.data[0].email);
         alert('Login successful!');
-        navigate('/dashboard');
+        navigate('/postDashBoard');
         // Redirect to dashboard or perform any other action
       } else {
         // User not found or invalid credentials

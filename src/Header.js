@@ -34,7 +34,12 @@ function Header() {
                   <Link to="/redux-toolkit-example" className="dropdown-item">Redux ToolKit Example</Link>
                   </li>
 
-                  
+                  <li>
+                  <Link to="/props-drilling-example" className="dropdown-item">Props Drilling Example</Link>
+                  </li>
+                  <li>
+                    <Link to="/context-api-example" className="dropdown-item"> Content API Example</Link>
+                  </li>
 
                   <li><a className="dropdown-item" href="#">Another action</a></li>
                   <li><hr className="dropdown-divider" /></li>

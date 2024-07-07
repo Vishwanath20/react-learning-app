@@ -15,9 +15,9 @@ const rootReducer = combineReducers({
     dataFetchApp:dataFetchReducer
   });
 
-  //const enhancers = [composeWithDevTools(), applyMiddleware(thunk)];
-//const store = createStore(rootReducer, compose(...enhancers));
+const enhancers = [composeWithDevTools(), applyMiddleware(thunk)];
+const store = createStore(rootReducer, compose(...enhancers));
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+//const store = createStore(rootReducer, applyMiddleware(thunk));
 
 export default store;

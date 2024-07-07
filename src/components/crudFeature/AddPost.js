@@ -10,23 +10,25 @@ function AddPost(){
   const [image, setImage] = useState('');
   const navigate = useNavigate();
 
-  const addPost = async () => {
+  const handleSubmit = async (e) => {
+    console.log("inside AddPost handlesubmit");
+    e.preventDefault();
+    const postedBy = localStorage.getItem('userEmail');
     const newPost = { title, description, postedBy, image };
     console.log('newPost:',newPost);
     await axios.post('http://localhost:3001/posts', newPost);
     //navigate('/');
   };
-
-
    
 
     return(
-      <>
+        <>
+         <>
         <CrudFeatureLayoutMenu></CrudFeatureLayoutMenu>
 
         <div className="container">
           <h1>Add Post</h1>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label>Post Title</label>
               <input
@@ -44,7 +46,7 @@ function AddPost(){
                 onChange={(e) => setDescription(e.target.value)}
               />
             </div>
-            <div className="form-group">
+            {/* <div className="form-group">
               <label>Posted By</label>
               <input
                 type="text"
@@ -52,7 +54,7 @@ function AddPost(){
                 value={postedBy}
                 onChange={(e) => setPostedBy(e.target.value)}
               />
-            </div>
+            </div> */}
             <div className="form-group">
               <label>Image URL</label>
               <input
@@ -62,10 +64,11 @@ function AddPost(){
                 onChange={(e) => setImage(e.target.value)}
               />
             </div>
-            <button type="button" className="btn btn-primary" onClick={addPost}>Add Post</button>
+            <button type="submit" className="btn btn-primary">Add Post</button>
           </form>
         </div>
       </>
+        </>
     );
 }
 
